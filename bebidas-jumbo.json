@@ -1,0 +1,100 @@
+{
+    "productos": [
+        {
+            "nombre": "Bebida Coca-Cola Sin Azúcar 1.5 L",
+            "precio": "$1.990"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Sin Azúcar 3 L",
+            "precio": "$2.390"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Light 1.5 L",
+            "precio": "$1.990"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Original 1.5 L",
+            "precio": "$1.990"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca Cola Sin Azúcar Lata 350 cc",
+            "precio": "$3.990"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Sin Azúcar 1.75 L",
+            "precio": "$1.490"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca-Cola Original 350 cc",
+            "precio": "$3.990"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Original 3 L",
+            "precio": "$2.390"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca-Cola Light 350 cc",
+            "precio": "$3.990"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Light 3 L",
+            "precio": "$2.390"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Original 1.75 L",
+            "precio": "$1.490"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca-Cola Zero Mini Lata 220 cc",
+            "precio": "$4.490"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Light 1.75 L",
+            "precio": "$1.490"
+        },
+        {
+            "nombre": "Pack 3 un. Bebidas Coca Cola Sin Azúcar + Sprite 3 L",
+            "precio": "$8.390"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca-Cola Light 220 cc",
+            "precio": "$4.490"
+        },
+        {
+            "nombre": "Pack 6 un. Bebida Coca-Cola Original 220 cc",
+            "precio": "$4.490"
+        },
+        {
+            "nombre": "Bebida Coca-Coca Sin Azúcar 591 ml",
+            "precio": "$1.000"
+        },
+        {
+            "nombre": "Pack 3 un. Bebida Coca Cola Sin Azúcar + Fanta 3 L",
+            "precio": "$8.390"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Original 591 ml",
+            "precio": "$1.000"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Light 591 ml",
+            "precio": "$1.000"
+        },
+        {
+            "nombre": "Pack 3 un. Bebidas Coca Cola + Fanta 3 L",
+            "precio": "$8.390"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Light lata 350 ml",
+            "precio": "$1.050"
+        },
+        {
+            "nombre": "Bebida Coca-Cola lata Sin Azúcar 350 ml",
+            "precio": "$1.050"
+        },
+        {
+            "nombre": "Bebida Coca-Cola Original lata 350 ml",
+            "precio": "$1.050"
+        }
+    ]
+}
