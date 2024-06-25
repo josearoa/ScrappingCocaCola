@@ -1,3 +1,9 @@
+## Proyecto de Web Scraping (Coca-Cola) - Lenguaje y Paradigmas de Programación
+# Integrantes: José Aguilera e Isadora Ahumada
+
+# Para la correcta ejecución del script, se deben instalar las siguientes librerías:
+# pip install selenium webdriver-manager pandas matplotlib seaborn json
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -11,6 +17,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ##### Paradigma Procedural #####
+# Se centra en el uso de funciones y procedimientos para llevar a cabo tareas específicas.
+
+# Modularidad
+# Simplicidad y claridad
 
 def iniciar_chrome():
     ruta = ChromeDriverManager().install()
@@ -42,6 +52,7 @@ def iniciar_chrome():
     opciones.add_experimental_option("prefs", prefs)
 
     s = Service(ruta)
+
     driver = webdriver.Chrome(service=s, options=opciones)
     return driver
 
@@ -96,6 +107,10 @@ with open('bebidas-acuenta.json', 'w', encoding='utf8') as outfile:
     json.dump(acuenta_data, outfile, indent=4, ensure_ascii=False)
 
 ###### Paradigma Orientado a Objetos ######
+# Organiza el código en torno a objetos, que son instancias de clases que encapsulan datos y comportamientos relacionados.
+
+# Encapsulamiento
+# Manejo de complejidad
 
 class Producto:
     def __init__(self, nombre, precio):
@@ -118,6 +133,7 @@ class Supermercado:
             producto = Producto(item['nombre'], item['precio'])
             self.agregar_producto(producto)
 
+    # Guardamos los datos de los productos de un supermercado en un archivo JSON
     def guardar_datos(self, archivo):
         with open(archivo, 'w', encoding='utf8') as outfile:
             json.dump([producto.__dict__ for producto in self.productos], outfile, indent=4, ensure_ascii=False)
@@ -125,7 +141,8 @@ class Supermercado:
     def __repr__(self):
         return f"Supermercado(nombre={self.nombre}, productos={self.productos})"
 
-# Cargar los datos desde JSON
+# Cargar los datos desde JSON, creando instancias de la clase Supermercado y cargando esos datos en dichas instancias.
+
 with open('bebidas-jumbo.json', 'r', encoding='utf8') as infile:
     jumbo_data = json.load(infile)
 
@@ -139,6 +156,10 @@ acuenta = Supermercado('Acuenta')
 acuenta.cargar_datos(acuenta_data)
 
 ###### Paradigma Funcional ######
+# Se centra en el uso de funciones puras y la evitación de estados mutables.
+
+# Inmutabilidad
+# Facilidad de pruebas
 
 def crear_dataframe(supermercado):
     data = {'nombre': [], 'precio': [], 'supermercado': []}
@@ -172,7 +193,7 @@ plt.show()
 # Agrupar por nombre del producto y supermercado para calcular el precio promedio
 precio_promedio = df.groupby(['nombre', 'supermercado'])['precio'].mean().unstack()
 
-# Visualización
+# Visualización de precios promedio
 plt.figure(figsize=(14, 7))
 precio_promedio.plot(kind='bar')
 plt.title('Precio Promedio de Bebidas Azucaradas por Supermercado')
