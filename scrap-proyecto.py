@@ -3,7 +3,14 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+
 import json
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+##### Paradigma Procedural #####
 
 def iniciar_chrome():
     ruta = ChromeDriverManager().install()
@@ -88,7 +95,7 @@ with open('bebidas-jumbo.json', 'w', encoding='utf8') as outfile:
 with open('bebidas-acuenta.json', 'w', encoding='utf8') as outfile:
     json.dump(acuenta_data, outfile, indent=4, ensure_ascii=False)
 
-######################################################################
+###### Paradigma Orientado a Objetos ######
 
 class Producto:
     def __init__(self, nombre, precio):
@@ -131,11 +138,7 @@ jumbo.cargar_datos(jumbo_data)
 acuenta = Supermercado('Acuenta')
 acuenta.cargar_datos(acuenta_data)
 
-############################################
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+###### Paradigma Funcional ######
 
 def crear_dataframe(supermercado):
     data = {'nombre': [], 'precio': [], 'supermercado': []}
@@ -156,6 +159,28 @@ sns.boxplot(x='supermercado', y='precio', data=df)
 plt.title('Comparación de Precios de Bebidas Azucaradas de Coca Cola entre Jumbo y Acuenta')
 plt.xlabel('Supermercado')
 plt.ylabel('Precio ($)')
+plt.show()
+
+# Histograma de distribución de precios
+plt.figure(figsize=(12, 6))
+sns.histplot(data=df, x='precio', hue='supermercado', element='step', kde=True)
+plt.title('Distribución de Precios de Bebidas Azucaradas en Jumbo y Acuenta')
+plt.xlabel('Precio ($)')
+plt.ylabel('Frecuencia')
+plt.show()
+
+# Agrupar por nombre del producto y supermercado para calcular el precio promedio
+precio_promedio = df.groupby(['nombre', 'supermercado'])['precio'].mean().unstack()
+
+# Visualización
+plt.figure(figsize=(14, 7))
+precio_promedio.plot(kind='bar')
+plt.title('Precio Promedio de Bebidas Azucaradas por Supermercado')
+plt.ylabel('Precio Promedio ($)')
+plt.xlabel('Producto')
+plt.xticks(rotation=45, ha='right')
+plt.legend(title='Supermercado')
+plt.tight_layout()
 plt.show()
 
 # Estadísticas descriptivas
